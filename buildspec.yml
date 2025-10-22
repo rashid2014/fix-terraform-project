@@ -13,8 +13,9 @@ phases:
       python: 3.9
     commands:
       - echo "Installing Terraform v${TF_VERSION}..."
+      - rm -f terraform terraform.zip
       - curl -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip
-      - unzip terraform.zip
+      - unzip -o terraform.zip
       - mv terraform /usr/local/bin/
       - terraform -version
       - echo "Terraform installation complete."
